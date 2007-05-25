@@ -2,7 +2,7 @@
 %define	version	2.15.0
 %define release %mkrel 1
 
-%define major 	0
+%define major 0
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} %major -d
 
@@ -20,6 +20,8 @@ Buildrequires:  epsilon-devel >= 0.3.0.008, emotion-devel >= 0.0.1.005
 BuildRequires:	ecore-devel >= 0.9.9.038, edje-devel >= 0.5.0.038,  edje >= 0.5.0.038
 BuildRequires:	%{mklibname sqlite3_0}-devel, %{mklibname exif-gtk5}-devel
 Buildrequires:  gettext-devel, cvs
+BuildRequires:  ImageMagick
+
 
 %description
 Ephoto is an ewl app that is used for sophisticate image viewing.
