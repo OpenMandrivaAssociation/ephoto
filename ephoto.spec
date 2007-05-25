@@ -1,6 +1,6 @@
 %define	name	ephoto
 %define	version	2.15.0
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define major 0
 %define libname %mklibname %{name} %major
@@ -21,6 +21,7 @@ BuildRequires:	ecore-devel >= 0.9.9.038, edje-devel >= 0.5.0.038,  edje >= 0.5.0
 BuildRequires:	%{mklibname sqlite3_0}-devel, %{mklibname exif-gtk5}-devel
 Buildrequires:  gettext-devel, cvs
 BuildRequires:  ImageMagick
+BuildRequires:  desktop-file-utils
 
 
 %description
@@ -61,6 +62,11 @@ cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
         xdg="true"
 EOF
 
+desktop-file-install --vendor="" \
+  --remove-category="Application" \
+  --add-category="X-MandrivaLinux-Multimedia-Graphics" \
+  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
+
 mkdir -p %buildroot{%_liconsdir,%_iconsdir,%_miconsdir}
 install -m 644 data/images/emblem-photos.png %buildroot%_liconsdir/ephoto.png
 convert -resize 32x32 data/images/emblem-photos.png %buildroot%_iconsdir/ephoto.png
@@ -89,5 +95,5 @@ rm -rf $RPM_BUILD_ROOT
 %_iconsdir/*.png
 %_miconsdir/*.png
 %_datadir/pixmaps/*.png
-
+%{_datadir}/applications/*
 
