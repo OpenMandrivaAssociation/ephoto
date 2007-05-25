@@ -14,6 +14,7 @@ License: 	BSD
 Group: 		Graphical desktop/Enlightenment
 URL: 		http://get-e.org/
 Source: 	%{name}-%{version}.tar.bz2
+Source1:	%name.desktop
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	evas-devel >= 0.9.9.038, ewl-devel >= 0.5.1.008 
 Buildrequires:  epsilon-devel >= 0.3.0.008, emotion-devel >= 0.0.1.005
@@ -62,10 +63,13 @@ cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
         xdg="true"
 EOF
 
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cp -vf %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/applications/
+
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-category="X-MandrivaLinux-Multimedia-Graphics" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
+  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/%name.desktop
 
 mkdir -p %buildroot{%_liconsdir,%_iconsdir,%_miconsdir}
 install -m 644 data/images/emblem-photos.png %buildroot%_liconsdir/ephoto.png
