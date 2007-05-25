@@ -17,7 +17,7 @@ Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	evas-devel >= 0.9.9.038, ewl-devel >= 0.5.1.008 
 Buildrequires:  epsilon-devel >= 0.3.0.008, emotion-devel >= 0.0.1.005
-BuildRequires:	ecore-devel >= 0.9.9.038, edje-devel >= 0.5.0.038
+BuildRequires:	ecore-devel >= 0.9.9.038, edje-devel >= 0.5.0.038,  edje >= 0.5.0.038
 BuildRequires:	%{mklibname sqlite3_0}-devel, %{mklibname exif-gtk5}-devel
 Buildrequires:  gettext-devel, cvs
 
