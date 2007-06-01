@@ -1,6 +1,6 @@
 %define	name	ephoto
 %define	version 2.15.0
-%define release %mkrel 3
+%define release %mkrel 5
 
 %define major 0
 %define libname %mklibname %{name} %major
@@ -11,7 +11,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 License: 	BSD
-Group: 		Graphical desktop/Enlightenment
+Group: 		Graphics
 URL: 		http://get-e.org/
 Source: 	%{name}-%{version}.tar.bz2
 Source1:	%name.desktop
