@@ -67,11 +67,15 @@ convert -resize 16x16 data/images/emblem-photos.png %buildroot%_miconsdir/ephoto
 mkdir -p %buildroot%{_datadir}/pixmaps
 cp data/images/emblem-photos.png %buildroot%{_datadir}/pixmaps/ephoto.png
 
+%if %mdkversion < 200900
 %post 
 %{update_menus} 
+%endif
 
+%if %mdkversion < 200900
 %postun 
 %{clean_menus} 
+%endif
 
 
 %clean
