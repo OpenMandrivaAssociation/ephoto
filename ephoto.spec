@@ -1,6 +1,6 @@
 %define	name	ephoto
 %define	version 2.15.0
-%define release %mkrel 5
+%define release %mkrel 7
 
 %define major 0
 %define libname %mklibname %{name} %major
