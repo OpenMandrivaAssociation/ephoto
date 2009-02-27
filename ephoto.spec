@@ -1,6 +1,6 @@
 %define	name	ephoto
-%define	version 2.15.0
-%define release %mkrel 7
+%define version 4.15.0
+%define release %mkrel 1
 
 %define major 0
 %define libname %mklibname %{name} %major
@@ -16,9 +16,9 @@ URL: 		http://get-e.org/
 Source: 	%{name}-%{version}.tar.bz2
 Source1:	%name.desktop
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	evas-devel >= 0.9.9.038, ewl-devel >= 0.5.1.008 
-Buildrequires:  epsilon-devel >= 0.3.0.008, emotion-devel >= 0.0.1.005
-BuildRequires:	ecore-devel >= 0.9.9.038, edje-devel >= 0.5.0.038,  edje >= 0.5.0.038
+BuildRequires:	evas-devel >= 0.9.9.050, ewl-devel >= 0.5.3.050
+Buildrequires:  epsilon-devel >= 0.3.0.012, emotion-devel >= 0.1.0.042
+BuildRequires:	ecore-devel >= 0.9.9.050, edje-devel >= 0.5.0.050,  edje >= 0.5.0.050
 BuildRequires:	%{mklibname sqlite3_0}-devel, %{mklibname exif-gtk5}-devel
 Buildrequires:  gettext-devel, cvs
 BuildRequires:  imagemagick
