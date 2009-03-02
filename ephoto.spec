@@ -1,6 +1,6 @@
 %define	name	ephoto
 %define version 4.15.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define major 0
 %define libname %mklibname %{name} %major
@@ -18,7 +18,7 @@ Source1:	%name.desktop
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	evas-devel >= 0.9.9.050, ewl-devel >= 0.5.3.050
 Buildrequires:  epsilon-devel >= 0.3.0.012, emotion-devel >= 0.1.0.042
-BuildRequires:	ecore-devel >= 0.9.9.050, edje-devel >= 0.5.0.050,  edje >= 0.5.0.050
+BuildRequires:	ecore-devel >= 0.9.9.050, edje-devel >= 0.9.9.5.050,  edje >= 0.9.9.050
 BuildRequires:	%{mklibname sqlite3}-devel, %{mklibname exif-gtk5}-devel
 Buildrequires:  gettext-devel, cvs
 BuildRequires:  imagemagick
