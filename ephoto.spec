@@ -54,7 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog COPYING NEWS README TODO
 %{_bindir}/*
-%{_datadir}/pixmaps/ephoto.png
 %{_datadir}/%name
-%{_datadir}/applications/*
-
