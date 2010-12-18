@@ -1,5 +1,5 @@
 %define	name	ephoto
-%define version 0.1.0.54504
+%define version 0.1.1.55225
 %define release %mkrel 1
 
 Summary: 	Enlightenment photo manager
