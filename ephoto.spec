@@ -51,6 +51,7 @@ NOCONFIGURE=yes ./autogen.sh
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 
 %files
 %doc AUTHORS ChangeLog COPYING COPYING.icons README
