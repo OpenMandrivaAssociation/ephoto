@@ -52,9 +52,7 @@ NOCONFIGURE=yes ./autogen.sh
 rm -rf %{buildroot}
 %makeinstall_std
 
-%find_lang %{name}
-
-%files -f %{name}.lang
+%files
 %doc AUTHORS ChangeLog COPYING COPYING.icons README
 %{_bindir}/*
 %{_libdir}/*.so
