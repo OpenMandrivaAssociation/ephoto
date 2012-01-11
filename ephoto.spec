@@ -1,57 +1,61 @@
-%define	name	ephoto
-%define version 0.1.1.55225
-%define release %mkrel 1
+#Tarball of svn snapshot created as follows...
+#Cut and paste in a shell after removing initial #
+
+#svn co http://svn.enlightenment.org/svn/e/trunk/ephoto ephoto; \
+#cd ephoto; \
+#SVNREV=$(LANGUAGE=C svn info | grep "Last Changed Rev:" | cut -d: -f 2 | sed "s@ @@"); \
+#v_maj=$(cat configure.ac | grep 'm4_define(\[v_maj\],' | cut -d' ' -f 2 | cut -d[ -f 2 | cut -d] -f 1); \
+#v_min=$(cat configure.ac | grep 'm4_define(\[v_min\],' | cut -d' ' -f 2 | cut -d[ -f 2 | cut -d] -f 1); \
+#v_mic=$(cat configure.ac | grep 'm4_define(\[v_mic\],' | cut -d' ' -f 2 | cut -d[ -f 2 | cut -d] -f 1); \
+#PKG_VERSION=$v_maj.$v_min.$v_mic.$SVNREV; \
+#cd ..; \
+#tar -Jcf ephoto-$PKG_VERSION.tar.xz ephoto/ --exclude .svn --exclude .*ignore
+
+%define svnrev	66757
 
 Summary: 	Enlightenment photo manager
-Name: 		%{name}
+Name: 		ephoto
 Epoch:		1
-Version: 	%{version}
-Release: 	%{release}
+Version: 	0.1.1.%{svnrev}
+Release: 	0.%{svnrev}.1
 License: 	BSD
 Group: 		Graphics
 URL: 		http://www.enlightenment.org
-Source: 	http://download.enlightenment.org/snapshots/LATEST/%{name}-%{version}.tar.bz2
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	evas-devel >= 0.9.9.050
-Buildrequires:	efreet-devel
-BuildRequires:	elementary-devel
-BuildRequires:	eio-devel
-BuildRequires:	ethumb-devel
-BuildRequires:	edje >= 0.9.9.050
-Buildrequires:  gettext-devel
+Source0: 	%{name}-%{version}.tar.xz
+
+Buildrequires:	edje
+Buildrequires:	gettext-devel
+BuildRequires:	pkgconfig(edje)
+Buildrequires:	pkgconfig(efreet)
+Buildrequires:	pkgconfig(eio)
+Buildrequires:	pkgconfig(elementary)
+Buildrequires:	pkgconfig(ethumb)
+BuildRequires:	pkgconfig(evas)
+Buildrequires:  pkgconfig(libexif)
 
 %description
 Ephoto is an ewl app that is used for sophisticate image viewing.
 This package is part of the Enlightenment DR17 desktop shell.
 
 %prep
-%setup -q
+%setup -qn %{name}
 
 %build
+NOCONFIGURE=yes ./autogen.sh
 %configure2_5x
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 %find_lang %{name}
 
-%if %mdkversion < 200900
-%post 
-%{update_menus} 
-%endif
-
-%if %mdkversion < 200900
-%postun 
-%{clean_menus} 
-%endif
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files -f %{name}.lang
-%defattr(-,root,root)
-%doc AUTHORS ChangeLog COPYING NEWS README TODO
+%doc AUTHORS ChangeLog COPYING COPYING.icons README
 %{_bindir}/*
-%{_datadir}/%name
+%{_datadir}/%{name}/themes/default/*.edj
+%{_datadir}/%{name}/images/*.png
+%{_datadir}/pixmaps/*.png
+%{_datadir}/applications/ephoto.desktop
+
