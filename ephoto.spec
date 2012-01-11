@@ -24,6 +24,8 @@ URL: 		http://www.enlightenment.org
 Source0: 	%{name}-%{version}.tar.xz
 
 Buildrequires:	edje
+Buildrequires:	elementary
+Buildrequires:	evas
 Buildrequires:	gettext-devel
 BuildRequires:	pkgconfig(edje)
 Buildrequires:	pkgconfig(efreet)
@@ -42,7 +44,8 @@ This package is part of the Enlightenment DR17 desktop shell.
 
 %build
 NOCONFIGURE=yes ./autogen.sh
-%configure2_5x
+%configure2_5x \
+	--disable-static
 %make
 
 %install
@@ -54,6 +57,7 @@ rm -rf %{buildroot}
 %files -f %{name}.lang
 %doc AUTHORS ChangeLog COPYING COPYING.icons README
 %{_bindir}/*
+%{_libdir}/*.so
 %{_datadir}/%{name}/themes/default/*.edj
 %{_datadir}/%{name}/images/*.png
 %{_datadir}/pixmaps/*.png
