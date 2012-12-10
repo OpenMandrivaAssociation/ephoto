@@ -11,7 +11,7 @@
 #cd ..; \
 #tar -Jcf ephoto-$PKG_VERSION.tar.xz ephoto/ --exclude .svn --exclude .*ignore
 
-%define svnrev	77231
+%define svnrev	79722
 
 Summary: 	Enlightenment photo manager
 Name: 		ephoto
@@ -35,6 +35,7 @@ Buildrequires:	pkgconfig(ethumb)
 BuildRequires:	pkgconfig(evas)
 Buildrequires:  pkgconfig(libexif)
 Buildrequires:  pkgconfig(eweather)
+Buildrequires:  evas_generic_loaders
 
 %description
 Ephoto is an ewl app that is used for sophisticate image viewing.
