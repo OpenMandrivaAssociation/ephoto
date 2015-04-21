@@ -1,4 +1,4 @@
-%define gitdate 20131224
+%define gitdate 20150420
 
 Summary:	Enlightenment photo manager
 Name:		ephoto
@@ -8,7 +8,7 @@ Epoch:		1
 License:	BSD
 Group:		Graphics
 Url:		http://www.enlightenment.org
-Source0: 	%{name}-%{gitdate}.tar.bz2
+Source0: 	%{name}-%{gitdate}.tar.xz
 
 BuildRequires:	edje
 BuildRequires:	elementary
@@ -30,13 +30,14 @@ Ephoto is an ewl app that is used for sophisticate image viewing.
 This package is part of the Enlightenment desktop shell.
 
 %files
-%doc AUTHORS ChangeLog COPYING COPYING.icons README
+%doc AUTHORS ChangeLog COPYING README
 %{_bindir}/*
-%{_libdir}/*.so
-%{_datadir}/%{name}/themes/default/*.edj
-%{_datadir}/%{name}/images/*.png
+#%{_libdir}/*.so
+#%{_datadir}/%{name}/themes/*.edj
+#%{_datadir}/%{name}/images/*.png
 %{_datadir}/pixmaps/*.png
 %{_datadir}/applications/ephoto.desktop
+%{_datadir}/ephoto/*
 
 #----------------------------------------------------------------------------
 
