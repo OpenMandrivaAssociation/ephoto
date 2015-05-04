@@ -42,7 +42,7 @@ This package is part of the Enlightenment desktop shell.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{name}-%{version}.%{gitdate}
+%setup -qn %{name}
 
 %build
 autoreconf -fi
