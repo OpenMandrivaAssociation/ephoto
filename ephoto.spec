@@ -1,14 +1,14 @@
-%define efl_version 1.19.1
+%define efl_version 1.23.3
 
 Summary:	Enlightenment photo manager
 Name:		ephoto
 Version:	1.5
-Release:	1
+Release:	2
 Epoch:		1
 License:	BSD
 Group:		Graphics
 Url:		http://www.enlightenment.org
-Source0: 	%{name}-%{version}.tar.xz
+Source0: 	https://download.enlightenment.org/rel/apps/ephoto/%{name}-%{version}.tar.xz
 
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(ecore-file) >= %{efl_version}
@@ -39,8 +39,6 @@ This package is part of the Enlightenment desktop shell.
 %{_datadir}/ephoto/*
 %{_datadir}/locale/*/*/*.mo
 
-
-
 #----------------------------------------------------------------------------
 
 %prep
@@ -54,5 +52,4 @@ autoreconf -fi
 %make_build
 
 %install
-%makeinstall_std
-
+%make_install
