@@ -30,7 +30,6 @@ This package is part of the Enlightenment desktop shell.
 %doc AUTHORS ChangeLog COPYING README
 %{_bindir}/*
 %{_libdir}/ephoto/ephoto_thumbnail
-/usr/lib/debug/%{_libdir}/%{name}/ephoto_thumbnail-%{version}-%{release}.%{_arch}.debug
 #%%{_libdir}/*.so
 #%%{_datadir}/%%{name}/themes/*.edj
 #%%{_datadir}/%%{name}/images/*.png
