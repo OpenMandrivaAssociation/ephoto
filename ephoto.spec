@@ -10,6 +10,7 @@ Group:		Graphics
 Url:		http://www.enlightenment.org
 Source0: 	https://download.enlightenment.org/rel/apps/ephoto/%{name}-%{version}.tar.xz
 
+BuildRequires:  e
 BuildRequires:  efl
 BuildRequires:	meson
 BuildRequires:	gettext-devel
