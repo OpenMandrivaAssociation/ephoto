@@ -24,13 +24,10 @@ This package is part of the Enlightenment desktop shell.
 %doc AUTHORS COPYING README
 %{_bindir}/*
 %{_libdir}/ephoto/ephoto_thumbnail
-#%%{_libdir}/*.so
-#%%{_datadir}/%%{name}/themes/*.edj
-#%%{_datadir}/%%{name}/images/*.png
-#{_datadir}/pixmaps/*.png
 %{_datadir}/applications/ephoto.desktop
 %{_datadir}/ephoto/*
 %{_datadir}/locale/*/*/*.mo
+%{_datadir}/icons/ephoto.png
 
 #----------------------------------------------------------------------------
 
