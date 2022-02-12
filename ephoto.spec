@@ -10,6 +10,7 @@ Group:		Graphics
 Url:		http://www.enlightenment.org
 Source0: 	https://download.enlightenment.org/rel/apps/ephoto/%{name}-%{version}.tar.xz
 
+BuildRequires:	meson
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(efl)
 BuildRequires:	pkgconfig(libexif)
@@ -33,14 +34,12 @@ This package is part of the Enlightenment desktop shell.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{name}-%{version}
+%autosetup -p1
 
 %build
-autoreconf -fi
-%configure \
-	--disable-static
+%meson
 
-%make_build
+%meson_build
 
 %install
-%make_install
+%meson_install
