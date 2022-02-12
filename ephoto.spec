@@ -1,9 +1,9 @@
-%define efl_version 1.23.3
+%define efl_version 1.26.2
 
 Summary:	Enlightenment photo manager
 Name:		ephoto
-Version:	1.5
-Release:	2
+Version:	1.6.0
+Release:	1
 Epoch:		1
 License:	BSD
 Group:		Graphics
@@ -11,16 +11,8 @@ Url:		http://www.enlightenment.org
 Source0: 	https://download.enlightenment.org/rel/apps/ephoto/%{name}-%{version}.tar.xz
 
 BuildRequires:	gettext-devel
-BuildRequires:	pkgconfig(ecore-file) >= %{efl_version}
-BuildRequires:	pkgconfig(edje) >= %{efl_version}
-BuildRequires:	pkgconfig(eet) >= %{efl_version}
-BuildRequires:	pkgconfig(efreet-mime) >= %{efl_version}
-BuildRequires:	pkgconfig(eio) >= %{efl_version}
-BuildRequires:	pkgconfig(elementary) >= %{efl_version}
-BuildRequires:	pkgconfig(ethumb) >= %{efl_version}
-BuildRequires:	pkgconfig(evas) >= %{efl_version}
+BuildRequires:	pkgconfig(efl)
 BuildRequires:	pkgconfig(libexif)
-#BuildRequires:	evas_generic_loaders
 
 %description
 Ephoto is an ewl app that is used for sophisticate image viewing.
