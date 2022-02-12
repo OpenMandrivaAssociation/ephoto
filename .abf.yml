@@ -1,7 +1,2 @@
-removed_sources:
-  ephoto-0.1.1.20150504.tar.gz: 6ea168d9053aad774c11f9251c70ef5bc0a73efa
-  ephoto-20131224.tar.bz2: 5ecfc8cc36d3eac796aee11e2d246a9b34323b43
-  ephoto-20150420.tar.xz: 4bccd7141c15eac4f52a6bd40a84233420a46e36
-  ephoto-1.0.tar.gz: 14690a52334301f607b1320303ef025e769be651
 sources:
-  ephoto-1.5.tar.xz: f84b4e1042a21e875cd5c66b2a2e777e21154a9f
+  ephoto-1.6.0.tar.xz: e3876338523bcc77d3c0604c3298e1acf1436d63
