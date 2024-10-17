@@ -7,7 +7,7 @@ Release:	1
 Epoch:		1
 License:	BSD
 Group:		Graphics
-Url:		http://www.enlightenment.org
+Url:		https://www.enlightenment.org
 Source0: 	https://download.enlightenment.org/rel/apps/ephoto/%{name}-%{version}.tar.xz
 
 BuildRequires:  e
